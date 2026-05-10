@@ -149,7 +149,7 @@ button {
 .intro-overlay {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 90;
   display: flex;
   pointer-events: none;
   background: #ffffff;
@@ -188,32 +188,8 @@ button {
   background: rgba(255, 122, 89, 0.08);
 }
 
-.hero-title {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.1rem, 0.55vw, 0.6rem);
-  color: #f8f4ec;
-  font-size: clamp(5rem, 11vw, 12.15rem);
-  font-weight: 900;
-  letter-spacing: 0;
-  line-height: 0.82;
-  text-transform: uppercase;
-}
-
-.hero-title-line {
-  display: flex;
-  overflow: hidden;
-  padding-bottom: 0.08em;
-  white-space: nowrap;
-}
-
-.hero-letter {
+.hero-char {
   display: inline-block;
-  overflow: hidden;
-}
-
-.hero-letter-inner {
-  display: block;
   opacity: 0;
   transform: translateY(64px);
   will-change: transform, opacity;
@@ -309,11 +285,6 @@ button {
 @media (max-width: 767px) {
   .hero-section {
     min-height: auto;
-  }
-
-  .hero-title {
-    font-size: clamp(3.65rem, 15.8vw, 6.3rem);
-    line-height: 0.88;
   }
 
   .scroll-wheel {
