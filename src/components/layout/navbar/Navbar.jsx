@@ -1,159 +1,79 @@
 "use client";
-import React, { useState } from "react";
-import Image from "next/image";
-// import ScrollSmoother from "gsap/ScrollSmoother";
-import Link from "next/link";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoClose } from "react-icons/io5";
-import routes from "@/src/helper/routes";
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+import { useState } from "react";
+
+const links = [
+  { label: "About", href: "#about" },
+  { label: "Stack", href: "#stack" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className=" w-full relative z-10 bg-gradient-to-r shadow-lg bg-[#2F3FD4] py-4">
-      {/* Desktop Navbar */}
-      <div className="section-width ">
-        <div className="flex items-center justify-between h-16 rounded-full ">
-          {/* Logo and Navigation Links Container */}
-          <div className="flex items-center min-w-0 ">
-            {/* Logo */}
-            <Link href="/">
-              <Image
-                src="/images/layout/logo.png"
-                alt="Kernel Logo"
-                width={350}
-                height={400}
-                className="w-[150px] sm:w-[150px]  lg:w-[150px] lg:h-[50px] object-contain   flex-shrink-0"
-              />
-            </Link>
-          </div>
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-[#ffffff12] bg-[#08090b]/88 backdrop-blur-xl">
+      <nav className="section-width flex min-h-20 items-center justify-between py-3">
+        <a href="#home" className="flex items-center gap-3" aria-label="Naresh Rajkumar home">
+          <span className="grid h-11 w-11 place-items-center border border-[#ffffff18] bg-[#111317] text-base font-semibold text-[#f8f4ec]">
+            NR
+          </span>
+          <span className="hidden text-sm font-medium text-[#c9c4b8] sm:block">
+            Naresh Rajkumar
+          </span>
+        </a>
 
-          <div className="flex items-center gap-10">
-            {/* Desktop Navigation Links */}
-            <div className="hidden lg:block ">
-              <div className="flex text-white cursor-pointer items-baseline space-x-6 xl:space-x-14">
-                <a
-                  href={routes.home + "#whykernel"}
-                  className="  transition-colors text-sm xl:text-base duration-200 font-medium whitespace-nowrap"
-                >
-                  Why Kernel
-                </a>
-                <a
-                  href={routes.home +"#corebenefits" }
-                  className="  transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
-                >
-                 Core Benefits
-                </a>
-                <a
-                  href={routes.home +"#whatyouget" }
-                  className="  transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
-                >
-                 What You Get
-                </a>
-              
-               <a
-                  href={routes.home +"#whoithelps" }
-                  className="  transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
-                >
-                 Who It Helps
-                </a>
-                  {/* <a
-                  href={routes.home +"#" }
-                  className="  transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
-                >
-                 Company
-                </a> */}
-              
-              </div>
-            </div>
-            
+        <div className="hidden items-center gap-1 md:flex">
+          {links.map((link) => (
+            <a key={link.href} href={link.href} className="nav-link">
+              {link.label}
+            </a>
+          ))}
+        </div>
 
-            {/* Desktop Sign Up Button */}
-            <div className="hidden lg:block flex-shrink-0">
-              <button className="bg-[#1281FF]   text-white px-6 xl:px-8 py-2  transition-all duration-200 font-medium text-sm xl:text-base">
-                <a
-                  href="#"
-                  className="text-white  transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
-                >
-                  Request a Demo{" "}
-                </a>
-              </button>
-            </div>
-          </div>
+        <a className="hidden border border-[#ff7a59] bg-[#ff7a59] px-4 py-3 text-sm font-semibold text-[#08090b] transition hover:bg-transparent hover:text-[#ffb199] md:inline-flex" href="mailto:nareshrajkumar31@gmail.com">
+          Hire me
+        </a>
 
-          
+        <button
+          type="button"
+          className="grid h-11 w-11 place-items-center border border-[#ffffff18] bg-[#111317] md:hidden"
+          onClick={() => setIsOpen((current) => !current)}
+          aria-label={isOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={isOpen}
+        >
+          <span className="flex w-5 flex-col gap-1.5" aria-hidden="true">
+            <span className={`h-px bg-[#f8f4ec] transition ${isOpen ? "translate-y-[7px] rotate-45" : ""}`} />
+            <span className={`h-px bg-[#f8f4ec] transition ${isOpen ? "opacity-0" : ""}`} />
+            <span className={`h-px bg-[#f8f4ec] transition ${isOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
+          </span>
+        </button>
+      </nav>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden flex-shrink-0">
-            <button
-              onClick={toggleMenu}
-              className="text-white  transition-colors duration-200 p-2"
+      {isOpen ? (
+        <div className="border-t border-[#ffffff12] bg-[#08090b] md:hidden">
+          <div className="section-width grid gap-2 py-4">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="border border-[#ffffff12] bg-[#111317] px-4 py-4 text-base font-medium text-[#f8f4ec]"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="mailto:nareshrajkumar31@gmail.com"
+              className="border border-[#ff7a59] bg-[#ff7a59] px-4 py-4 text-center text-base font-semibold text-[#08090b]"
+              onClick={() => setIsOpen(false)}
             >
-              {isMenuOpen ? (
-                <IoClose className="w-12 h-10 sm:w-5 sm:h-5 text-white" />
-              ) : (
-                <RxHamburgerMenu className="w-12 h-10 sm:w-5 sm:h-5 text-white" />
-              )}
-            </button>
+              Hire me
+            </a>
           </div>
         </div>
-      </div>
-
-      {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="lg:hidden bg-gradient-to-r from-[#63A9F6] to-[#0D75ED] border-t border-gray-200 text-center">
-          <div className="px-4 pt-4 pb-6 space-y-4">
-            <a
-              href={routes.home + "#"}
-              className="block text-white  transition-colors duration-200 font-medium py-2 text-sm"
-            >
-             Why Kernel
-            </a>
-            <a
-              href={routes.home + "#"}
-              className="block text-white  transition-colors duration-200 font-medium py-2 text-sm"
-            >
-            Core Benefits
-            </a>
-            <a
-              href={routes.home + "#"}
-              className="block text-white  transition-colors duration-200 font-medium py-2 text-sm"
-            >
-              What You Get
-            </a>
-
-               <a
-              href={routes.home + "#"}
-              className="block text-white  transition-colors duration-200 font-medium py-2 text-sm"
-            >
-              Who It Helps
-            </a>
-               {/* <a
-              href={routes.home + "#"}
-              className="block text-white  transition-colors duration-200 font-medium py-2 text-sm"
-            >
-              Company
-            </a> */}
-          
-            <div className="pt-4">
-              <button className="w-full bg-[#1281FF] text-white px-4 py-2 rounded-full  transition-all duration-200 font-medium text-sm">
-                <a
-                  href="#"
-                  className="text-white transition-colors duration-200 font-medium text-sm whitespace-nowrap"
-                >
-                  Request a Demo
-                </a>
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </nav>
+      ) : null}
+    </header>
   );
-};
-
-export default Navbar;
+}
