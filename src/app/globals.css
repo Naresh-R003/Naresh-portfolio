@@ -160,7 +160,7 @@ button {
   height: 100%;
   background: #08090b;
   transform: scaleY(0) translateZ(0);
-  transform-origin: 50% 0%;
+  transform-origin: 50% 100%;
   will-change: transform;
 }
 
@@ -214,19 +214,9 @@ button {
 
 .hero-letter-inner {
   display: block;
-  transform: translateY(115%);
-  will-change: transform;
-}
-
-.hero-subtitle-part {
-  display: inline-flex;
-  overflow: hidden;
-}
-
-.hero-subtitle-inner {
-  display: inline-block;
-  transform: translateY(140%);
-  will-change: transform;
+  opacity: 0;
+  transform: translateY(64px);
+  will-change: transform, opacity;
 }
 
 .hero-load-fade {

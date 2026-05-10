@@ -131,7 +131,6 @@ const contacts = [
 const scrollWheelText = "SCROLL DOWN  SCROLL DOWN  ";
 const introSlabs = Array.from({ length: 6 }, (_, index) => index);
 const heroTitleLines = ["Frontend", "Developer"];
-const heroSubtitleParts = ["Frontend Developer", "React", "Next.js", "GSAP"];
 
 function SectionHeading({ kicker, title, children }) {
   return (
@@ -170,60 +169,54 @@ export default function Home() {
         gsap.set(".intro-overlay", { display: "none" });
         gsap.set(".hero-content", { clipPath: "inset(0% 0% 0% 0%)" });
         gsap.set(".hero-load-fade", { autoAlpha: 1, y: 0 });
-        gsap.set(".hero-letter-inner", { yPercent: 0 });
-        gsap.set(".hero-subtitle-inner", { yPercent: 0 });
+        gsap.set(".hero-letter-inner", { autoAlpha: 1, y: 0 });
       } else {
         gsap.set(".intro-overlay", { display: "flex", autoAlpha: 1 });
-        gsap.set(".intro-slab", { scaleY: 0, transformOrigin: "50% 0%", force3D: true });
+        gsap.set(".intro-slab", { scaleY: 0, transformOrigin: "50% 100%", force3D: true });
         gsap.set(".hero-content", { clipPath: "inset(0% 100% 0% 0%)" });
         gsap.set(".hero-load-fade", { autoAlpha: 0, y: 28 });
-        gsap.set(".hero-letter-inner", { yPercent: 115 });
-        gsap.set(".hero-subtitle-inner", { yPercent: 140 });
+        gsap.set(".hero-letter-inner", { autoAlpha: 0, y: 64 });
 
         const intro = gsap.timeline({ defaults: { ease: "power4.out" } });
 
         intro
           .to(".intro-slab", {
             scaleY: 1,
-            duration: 0.86,
+            duration: 0.72,
             ease: "power4.inOut",
-            stagger: 0.09,
-          }, 0)
-          .to(".hero-content", {
-            clipPath: "inset(0% 0% 0% 0%)",
-            duration: 1.18,
-            ease: "power3.inOut",
-          }, 0.08)
+            stagger: 0.075,
+          })
           .to(".intro-overlay", {
             autoAlpha: 0,
-            duration: 0.35,
+            duration: 0.32,
             ease: "power2.out",
-          }, 1.02)
-          .set(".intro-overlay", { display: "none" }, 1.1)
+          }, ">-0.06")
+          .set(".intro-overlay", { display: "none" })
+          .to(".hero-content", {
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 1.05,
+            ease: "power3.inOut",
+          }, "<")
           .to(".hero-title-line-0 .hero-letter-inner", {
-            yPercent: 0,
+            autoAlpha: 1,
+            y: 0,
             duration: 0.78,
             ease: "power3.out",
             stagger: 0.03,
-          }, 0.18)
+          }, "<0.14")
           .to(".hero-title-line-1 .hero-letter-inner", {
-            yPercent: 0,
+            autoAlpha: 1,
+            y: 0,
             duration: 0.78,
             ease: "power3.out",
             stagger: 0.03,
-          }, 0.32)
-          .to(".hero-subtitle-inner", {
-            yPercent: 0,
-            duration: 0.62,
-            ease: "power3.out",
-            stagger: 0.06,
-          }, 0.4)
+          }, "<0.12")
           .to(".hero-load-fade", {
             autoAlpha: 1,
             y: 0,
             duration: 0.72,
             stagger: 0.06,
-          }, 0.46);
+          }, "<0.06");
 
         gsap.to(".hero-background-glow", {
           yPercent: 12,
@@ -280,7 +273,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="hero-content section-width relative z-[110] flex min-h-[100svh] flex-col justify-between pb-8 pt-28 md:pb-12 md:pt-32">
+        <div className="hero-content section-width relative z-[110] flex min-h-[100svh] flex-col justify-start gap-10 pb-8 pt-28 md:pb-12 md:pt-32">
           <div className="hero-load-fade flex items-center justify-between gap-4 text-sm text-[#b8b4aa]">
             <span>Naresh Rajkumar</span>
             <a className="hero-mini-cta" href="#projects">
@@ -288,18 +281,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="py-12 md:py-16">
-            <p className="hero-subtitle mb-8 flex flex-wrap gap-x-2 gap-y-1 text-sm font-medium uppercase tracking-[0.24em] text-[#b8b4aa]">
-              {heroSubtitleParts.map((part, index) => (
-                <span key={part} className="hero-subtitle-part" aria-hidden="true">
-                  <span className="hero-subtitle-inner">
-                    {part}
-                    {index < heroSubtitleParts.length - 1 ? " / " : ""}
-                  </span>
-                </span>
-              ))}
-              <span className="sr-only">Frontend Developer / React / Next.js / GSAP</span>
-            </p>
+          <div className="pt-6 md:pt-10">
             <h1 className="hero-title" aria-label="Frontend Developer">
               {heroTitleLines.map((line, lineIndex) => (
                 <span
@@ -317,7 +299,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="grid items-end gap-10 md:grid-cols-[180px_1fr_360px]">
+          <div className="mt-auto grid items-end gap-10 md:grid-cols-[180px_1fr_360px]">
             <a className="scroll-wheel hero-load-fade" href="#about" aria-label="Scroll to about section">
               <span className="scroll-wheel-text" aria-hidden="true">
                 {[...scrollWheelText].map((letter, index) => (
