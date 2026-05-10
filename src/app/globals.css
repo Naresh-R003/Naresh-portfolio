@@ -256,10 +256,7 @@ button {
   font-size: 3rem;
 }
 
-.hero-status {
-  border-left: 1px solid rgba(255, 255, 255, 0.13);
-  padding-left: 1.5rem;
-}
+
 
 .hero-skill-pill {
   border: 1px solid rgba(255, 255, 255, 0.12);

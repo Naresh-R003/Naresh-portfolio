@@ -14,10 +14,11 @@ export default function HeroSection() {
         ))}
       </div>
 
-      <div className="hero-content section-width relative z-[110] flex min-h-[100svh] flex-col justify-start gap-10 pb-8 pt-28 md:pb-12 md:pt-32">
-        <div className="hero-load-fade flex items-center justify-between gap-4 text-sm text-[#b8b4aa]">
+      <div className="hero-content section-width relative z-[110] flex min-h-[100svh] flex-col justify-start gap-10 pb-8 pt-10 md:pb-12">
+        <div className="hero-load-fade flex items-center justify-between gap-4 text-4xl font-extralight
+         text-[#ffffff]">
           <span>Naresh Rajkumar</span>
-          <a className="hero-mini-cta" href="#projects">
+          <a className="font-normal text-lg py-2 px-4 border rounded-full" href="#projects">
             Work <span aria-hidden="true">+</span>
           </a>
         </div>
@@ -48,7 +49,7 @@ export default function HeroSection() {
           </h1>
         </div>
 
-        <div className="mt-auto grid items-end gap-10 md:grid-cols-[180px_1fr_360px]">
+        <div className=" grid mt-auto items-start gap-28 md:grid-cols-[180px_1fr_360px]">
           <a className="scroll-wheel hero-load-fade" href="#about" aria-label="Scroll to about section">
             <span className="scroll-wheel-text" aria-hidden="true">
               {[...scrollWheelText].map((letter, index) => (
@@ -70,25 +71,23 @@ export default function HeroSection() {
           </a>
 
           <p className="hero-load-fade max-w-xl text-base leading-7 text-[#c9c4b8] md:text-lg">
-            I build production-ready SaaS dashboards, CMS-driven platforms, mobile flows and animation-rich
-            marketing websites that feel sharp on every screen.
+          
           </p>
 
-          <div className="hero-status hero-load-fade">
-            <div className="flex items-center justify-between gap-4">
-              <h2 className="text-2xl font-medium uppercase text-[#f8f4ec] md:text-3xl">Open to work</h2>
-              <span className="status-star" aria-hidden="true">
+          <div className=" hero-load-fade  flex flex-col justify-end w-full">
+            <div className="w-[200px]">
+
+            <div className="flex w-full  text-start">
+              <h2 className="text-2xl text-nowrap
+              
+              text-medium uppercase text-[#f8f4ec] md:text-3xl">Open to work</h2>
+              {/* <span className="status-star" aria-hidden="true">
                 *
-              </span>
+              </span> */}    
             </div>
-            <p className="mt-3 text-sm text-[#b8b4aa]">Based in Bengaluru, India</p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["React", "Next.js", "GSAP", "Strapi", "React Native"].map((item) => (
-                <span key={item} className="hero-skill-pill">
-                  {item}
-                </span>
-              ))}
+            <p className="mt-1 text-sm text-[#b8b4aa]">Based in Bengaluru, India</p>
             </div>
+
           </div>
         </div>
       </div>
