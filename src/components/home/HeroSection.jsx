@@ -30,7 +30,10 @@ export default function HeroSection() {
           >
             <span className="hero-headline-line-1 inline-block whitespace-nowrap" aria-hidden="true">
               {[...heroHeadlineLine1].map((letter, index) => (
-                <span key={`${heroHeadlineLine1}-${letter}-${index}`} className="hero-char">
+                <span
+                  key={`${heroHeadlineLine1}-${letter}-${index}`}
+                  className="hero-char gradient-heading"
+                >
                   {letter}
                 </span>
               ))}
@@ -41,7 +44,10 @@ export default function HeroSection() {
               aria-hidden="true"
             >
               {[...heroHeadlineLine2].map((letter, index) => (
-                <span key={`${heroHeadlineLine2}-${letter}-${index}`} className="hero-char">
+                <span
+                  key={`${heroHeadlineLine2}-${letter}-${index}`}
+                  className="hero-char gradient-heading"
+                >
                   {letter}
                 </span>
               ))}
@@ -70,22 +76,22 @@ export default function HeroSection() {
             </span>
           </a>
 
-          <p className="hero-load-fade max-w-xl text-base leading-7 text-[#c9c4b8] md:text-lg">
-          
-          </p>
+	          <p className="hero-load-fade max-w-xl text-base leading-7 text-white/90 md:text-lg">
+	          
+	          </p>
 
           <div className=" hero-load-fade  flex flex-col justify-end w-full">
             <div className="w-[200px]">
 
-            <div className="flex w-full  text-start">
-              <h2 className="text-2xl text-nowrap
-              
-              text-medium uppercase text-[#f8f4ec] md:text-3xl">Open to work</h2>
+	            <div className="flex w-full  text-start">
+	              <h2 className="text-2xl text-nowrap
+	              
+	              text-medium uppercase text-white md:text-3xl">Open to work</h2>
               {/* <span className="status-star" aria-hidden="true">
                 *
               </span> */}    
             </div>
-            <p className="mt-1 text-sm text-[#b8b4aa]">Based in Bengaluru, India</p>
+	            <p className="mt-1 text-sm text-white/90">Based in Bengaluru, India</p>
             </div>
 
           </div>

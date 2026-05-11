@@ -15,7 +15,7 @@ const projects = [
       "Created an operations dashboard for inventory, KYC approval, cancellations and delivery assignment.",
       "Designed a delivery partner app flow with acceptance, location tracking and proof of delivery.",
     ],
-    accent: "#ff7a59",
+    accent: "#f8f4ec",
   },
   {
     title: "Lighthouse",
@@ -28,7 +28,7 @@ const projects = [
       "Built custom CMS content models, APIs and frontend integration workflows.",
       "Delivered a polished UI system aligned with modern luxury web standards.",
     ],
-    accent: "#facc15",
+    accent: "#f8f4ec",
   },
   {
     title: "Auditee AI",
@@ -41,7 +41,7 @@ const projects = [
       "Created KPI dashboards with responsive chart and data visualization components.",
       "Developed onboarding flows for org hierarchy, brand, SSO, campaigns and user management.",
     ],
-    accent: "#4ade80",
+    accent: "#f8f4ec",
   },
   {
     title: "Climaty AI",
@@ -55,7 +55,7 @@ const projects = [
       "Built globe visualizations, real-time mapping interfaces and responsive sections.",
       "Translated complex design concepts into production-ready frontend components.",
     ],
-    accent: "#67e8f9",
+    accent: "#f8f4ec",
   },
   {
     title: "Realm",
@@ -68,7 +68,7 @@ const projects = [
       "Focused on smooth page transitions and clean interaction details.",
       "Delivered a fully responsive build for desktop, tablet and mobile users.",
     ],
-    accent: "#c084fc",
+    accent: "#f8f4ec",
   },
 ];
 
@@ -99,11 +99,11 @@ export default function ProjectsSection() {
               >
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
-                    <p className="text-sm text-[#8f8a81]">{selectedProject.period}</p>
-                    <h3 className="mt-3 text-3xl font-semibold text-[#f8f4ec] md:text-4xl">
+                    <p className="text-sm text-white/90">{selectedProject.period}</p>
+                    <h3 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
                       {selectedProject.title}
                     </h3>
-                    <p className="mt-2 text-base text-[#ffb199]">{selectedProject.type}</p>
+                    <p className="mt-2 text-base text-white/90">{selectedProject.type}</p>
                   </div>
                   <span
                     className="h-12 w-12 border"
@@ -112,7 +112,7 @@ export default function ProjectsSection() {
                   />
                 </div>
 
-                <p className="mt-7 text-lg leading-8 text-[#d8d2c5]">{selectedProject.summary}</p>
+                <p className="mt-7 text-lg leading-8 text-white/90">{selectedProject.summary}</p>
 
                 <div className="mt-7 space-y-4">
                   {selectedProject.highlights.map((highlight) => (
@@ -122,7 +122,7 @@ export default function ProjectsSection() {
                         style={{ backgroundColor: selectedProject.accent }}
                         aria-hidden="true"
                       />
-                      <p className="text-base leading-7 text-[#b8b4aa]">{highlight}</p>
+                      <p className="text-base leading-7 text-white/90">{highlight}</p>
                     </div>
                   ))}
                 </div>
@@ -157,9 +157,9 @@ export default function ProjectsSection() {
                       style={{ backgroundColor: project.accent }}
                       aria-hidden="true"
                     />
-                    <span className="text-xl font-semibold text-[#f8f4ec]">{project.title}</span>
+                    <span className="text-xl font-semibold text-white">{project.title}</span>
                   </span>
-                  <span className="mt-3 block text-sm leading-6 text-[#b8b4aa]">{project.type}</span>
+                  <span className="mt-3 block text-sm leading-6 text-white/90">{project.type}</span>
                 </motion.button>
               );
             })}
@@ -169,4 +169,3 @@ export default function ProjectsSection() {
     </section>
   );
 }
-

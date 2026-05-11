@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,8 +29,27 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+.instrument {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.instrument-italic {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.gradient-heading {
+  background-image: radial-gradient(99% 86% at 50% 50%, rgb(213, 219, 230) 28.38%, rgb(4, 7, 13) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 ::selection {
-  background: #ff7a59;
+  background: #f8f4ec;
   color: #08090b;
 }
 
@@ -69,7 +90,7 @@ button {
   }
 
   .eyebrow {
-    @apply w-fit border border-[#ffffff16] bg-[#111317] px-3 py-2 text-xs font-semibold uppercase text-[#ffb199];
+    @apply w-fit border border-[#ffffff16] bg-[#111317] px-3 py-2 text-2xl font-bold uppercase text-white;
   }
 
   .panel {
@@ -78,15 +99,15 @@ button {
   }
 
   .btn-primary-dark {
-    @apply inline-flex min-h-12 items-center justify-center border border-[#ff7a59] bg-[#ff7a59] px-5 py-3 text-sm font-semibold text-[#08090b] transition duration-300 hover:-translate-y-1 hover:bg-[#ffb199] hover:text-[#08090b] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb199];
+    @apply inline-flex min-h-12 items-center justify-center border border-[#f8f4ec] bg-[#f8f4ec] px-5 py-3 text-sm font-semibold text-[#08090b] transition duration-300 hover:-translate-y-1 hover:bg-[#d8d2c5] hover:text-[#08090b] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f8f4ec];
   }
 
   .btn-secondary-dark {
-    @apply inline-flex min-h-12 items-center justify-center border border-[#ffffff18] bg-[#111317] px-5 py-3 text-sm font-semibold text-[#f8f4ec] transition duration-300 hover:-translate-y-1 hover:border-[#67e8f9] hover:text-[#67e8f9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#67e8f9];
+    @apply inline-flex min-h-12 items-center justify-center border border-[#ffffff18] bg-[#111317] px-5 py-3 text-sm font-semibold text-[#f8f4ec] transition duration-300 hover:-translate-y-1 hover:border-[#f8f4ec] hover:text-[#f8f4ec] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f8f4ec];
   }
 
   .nav-link {
-    @apply px-4 py-3 text-sm font-medium text-[#b8b4aa] transition hover:bg-[#111317] hover:text-[#f8f4ec];
+    @apply px-4 py-3 text-sm font-medium text-white/90 transition hover:bg-[#111317] hover:text-white;
   }
 
   .metric-tile {
@@ -95,7 +116,7 @@ button {
   }
 
   .tech-pill {
-    @apply border border-[#ffffff12] bg-[#0b0d10] px-3 py-2 text-sm text-[#c9c4b8];
+    @apply border border-[#ffffff12] bg-[#0b0d10] px-3 py-2 text-sm text-white/90;
   }
 
   .timeline-item {
@@ -103,11 +124,11 @@ button {
   }
 
   .project-button {
-    @apply w-full border border-[#ffffff12] bg-[#111317] p-5 transition duration-300 hover:border-[#ffffff28] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7a59];
+    @apply w-full border border-[#ffffff12] bg-[#111317] p-5 transition duration-300 hover:border-[#ffffff28] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f8f4ec];
   }
 
   .project-button.is-active {
-    @apply border-[#ff7a59] bg-[#171210];
+    @apply border-[#f8f4ec] bg-[#111317];
   }
 
   .contact-band {
@@ -115,7 +136,7 @@ button {
   }
 
   .contact-link {
-    @apply border border-[#ffffff12] bg-[#0b0d10] p-5 transition duration-300 hover:-translate-y-1 hover:border-[#ff7a59];
+    @apply border border-[#ffffff12] bg-[#0b0d10] p-5 transition duration-300 hover:-translate-y-1 hover:border-[#f8f4ec];
   }
 }
 

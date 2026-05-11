@@ -16,10 +16,10 @@ export default function Navbar() {
     <header className="fixed left-0 top-0 z-50 w-full border-b border-[#ffffff12] bg-[#08090b]/88 backdrop-blur-xl">
       <nav className="section-width flex min-h-20 items-center justify-between py-3">
         <a href="#home" className="flex items-center gap-3" aria-label="Naresh Rajkumar home">
-          <span className="grid h-11 w-11 place-items-center border border-[#ffffff18] bg-[#111317] text-base font-semibold text-[#f8f4ec]">
+          <span className="grid h-11 w-11 place-items-center border border-[#ffffff18] bg-[#111317] text-base font-semibold text-white">
             NR
           </span>
-          <span className="hidden text-sm font-medium text-[#c9c4b8] sm:block">
+          <span className="hidden text-sm font-medium text-white/90 sm:block">
             Naresh Rajkumar
           </span>
         </a>
@@ -32,7 +32,10 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a className="hidden border border-[#ff7a59] bg-[#ff7a59] px-4 py-3 text-sm font-semibold text-[#08090b] transition hover:bg-transparent hover:text-[#ffb199] md:inline-flex" href="mailto:nareshrajkumar31@gmail.com">
+        <a
+          className="hidden border border-white bg-white px-4 py-3 text-sm font-semibold text-[#08090b] transition hover:bg-transparent hover:text-white md:inline-flex"
+          href="mailto:nareshrajkumar31@gmail.com"
+        >
           Hire me
         </a>
 
@@ -58,7 +61,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="border border-[#ffffff12] bg-[#111317] px-4 py-4 text-base font-medium text-[#f8f4ec]"
+                className="border border-[#ffffff12] bg-[#111317] px-4 py-4 text-base font-medium text-white"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -66,7 +69,7 @@ export default function Navbar() {
             ))}
             <a
               href="mailto:nareshrajkumar31@gmail.com"
-              className="border border-[#ff7a59] bg-[#ff7a59] px-4 py-4 text-center text-base font-semibold text-[#08090b]"
+              className="border border-white bg-white px-4 py-4 text-center text-base font-semibold text-[#08090b]"
               onClick={() => setIsOpen(false)}
             >
               Hire me

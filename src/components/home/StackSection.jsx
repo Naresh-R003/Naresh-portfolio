@@ -2,66 +2,78 @@ import { motion } from "framer-motion";
 
 import SectionHeading from "./SectionHeading";
 
-const techGroups = [
-  {
-    title: "Frontend",
-    items: ["React.js", "Next.js", "JavaScript ES6+", "TypeScript", "HTML5", "CSS3"],
-  },
-  {
-    title: "Motion and UI",
-    items: ["Tailwind CSS", "GSAP", "Framer Motion", "Responsive UI", "Cross-browser QA"],
-  },
-  {
-    title: "Mobile",
-    items: ["React Native", "Multi-step flows", "Reusable UI components", "Mobile-first layouts"],
-  },
-  {
-    title: "Backend and CMS",
-    items: ["Node.js", "Express.js", "Strapi CMS", "REST APIs", "Axios"],
-  },
-  {
-    title: "Data",
-    items: ["MongoDB", "PostgreSQL", "SQL", "Chart.js", "KPI dashboards"],
-  },
-  {
-    title: "Workflow",
-    items: ["Git", "GitHub", "Postman", "AWS", "CI/CD pipelines", "Agile delivery"],
-  },
+const techItems = [
+  { name: "React", subtitle: "Core tool", icon: "/techstack/react.svg" },
+  { name: "Next.js", subtitle: "Core tool", icon: "/techstack/nextjs2.svg" },
+  { name: "JavaScript", subtitle: "Core tool", icon: "/techstack/js.svg" },
+  { name: "TypeScript", subtitle: "Core tool", icon: "/techstack/typescript.svg" },
+  { name: "Tailwind CSS", subtitle: "Styling", icon: "/techstack/tailwindcss.svg" },
+  { name: "Framer Motion", subtitle: "Animation", icon: "/techstack/framer.svg" },
+  { name: "GSAP", subtitle: "Animation", icon: "/techstack/gsap2.svg" },
+  { name: "Node.js", subtitle: "Runtime", icon: "/techstack/nodejs.svg" },
+  { name: "Express.js", subtitle: "Backend", icon: "/techstack/expressjs-icon.svg" },
+  { name: "MongoDB", subtitle: "Database", icon: "/techstack/mongodb.svg" },
+  { name: "PostgreSQL", subtitle: "Database", icon: "/techstack/postgresql.svg" },
+  { name: "Docker", subtitle: "DevOps", icon: "/techstack/docker.svg" },
+  { name: "Git", subtitle: "Version Control", icon: "/techstack/git.svg" },
+  { name: "AWS", subtitle: "Cloud", icon: "/techstack/aws.svg" },
+  { name: "Postman", subtitle: "API Testing", icon: "/techstack/postman.svg" },
 ];
+
+function TechIcon({ src, label }) {
+  return (
+    <div
+      className="grid h-14 w-14 place-items-center"
+      title={label}
+      aria-label={label}
+    >
+      <img
+        src={src}
+        alt={label}
+        className="h-10 w-10 opacity-90 transition duration-200 hover:opacity-100 [filter:grayscale(1)_invert(1)_brightness(1.15)]"
+        loading="lazy"
+      />
+    </div>
+  );
+}
 
 export default function StackSection() {
   return (
     <section id="stack" className="section-padding">
       <div className="section-width">
-        <SectionHeading kicker="Tech stack" title="The tools I use to ship reliable, animated interfaces.">
-          A focused stack for product UI, marketing motion, CMS-driven rendering, mobile flows and API-heavy
+       <div className="text-center w-full flex mb-6 flex-col mx-auto max-w-3xl">
+                    <h2 className="mt-7 text-pretty text-3xl font-medium leading-normal text-white md:text-5xl">
+The Tools I Use
+</h2>
+<p className="text-lg pt-2 text-white font-normal">
+    A focused stack for product UI, marketing motion, CMS-driven rendering, mobile flows and API-heavy
           dashboards.
-        </SectionHeading>
+</p></div>
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {techGroups.map((group, groupIndex) => (
+        <motion.div
+          className="grid grid-cols-3 gap-6 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2, margin: "-80px" }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.09, delayChildren: 0.08 } },
+          }}
+        >
+          {techItems.map((tech) => (
             <motion.div
-              key={group.title}
-              className="gsap-reveal panel min-h-[220px] p-6"
-              whileHover={{ y: -6, borderColor: "rgba(74,222,128,0.42)" }}
-              transition={{ type: "spring", stiffness: 240, damping: 24 }}
+              key={tech.name}
+              className="flex items-center justify-center"
+              variants={{
+                hidden: { opacity: 0, y: 22 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
+              }}
             >
-              <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-semibold text-[#f8f4ec]">{group.title}</h3>
-                <span className="text-sm text-[#8f8a81]">0{groupIndex + 1}</span>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <span key={item} className="tech-pill">
-                    {item}
-                  </span>
-                ))}
-              </div>
+              <TechIcon src={tech.icon} label={tech.name} />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
-

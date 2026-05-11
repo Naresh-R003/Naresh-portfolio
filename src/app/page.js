@@ -6,8 +6,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import AboutSection from "../components/home/AboutSection";
 import ContactSection from "../components/home/ContactSection";
+import ExperienceSection from "../components/home/ExperienceSection";
 import HeroSection from "../components/home/HeroSection";
 import ProjectsSection from "../components/home/ProjectsSection";
+import ProjectsWallSection from "../components/home/ProjectsWallSection";
 import StackSection from "../components/home/StackSection";
 
 export default function Home() {
@@ -81,7 +83,7 @@ export default function Home() {
             trigger: ".hero-section",
             start: "top top",
             end: "bottom top",
-            scrub: true,
+            scrub: 2,
           },
         });
       }
@@ -90,11 +92,12 @@ export default function Home() {
         gsap.from(item, {
           y: 36,
           opacity: 0,
-          duration: 0.8,
+          duration: 1.05,
+          delay: 0.06,
           ease: "power3.out",
           scrollTrigger: {
             trigger: item,
-            start: "top 82%",
+            start: "top 86%",
           },
         });
       });
@@ -103,13 +106,61 @@ export default function Home() {
         gsap.from(item, {
           y: 28,
           opacity: 0,
-          duration: 0.7,
-          delay: index * 0.04,
+          duration: 0.9,
+          delay: 0.08 + index * 0.05,
           ease: "power3.out",
           scrollTrigger: {
             trigger: item,
             start: "top 88%",
           },
+        });
+      });
+
+      gsap.utils.toArray(".metric-count").forEach((element) => {
+        const el = element;
+        const target = Number.parseFloat(el.dataset.value || "0");
+        const suffix = el.dataset.suffix || "";
+        const decimals = String(el.dataset.value || "").includes(".") ? 1 : 0;
+
+        const state = { value: 0 };
+        const updateText = () => {
+          const formatted = decimals ? state.value.toFixed(decimals) : String(Math.round(state.value));
+          el.textContent = `${formatted}${suffix}`;
+        };
+
+        const timeline = gsap.timeline({ paused: true });
+
+        timeline.add(() => {
+          const shuffleEnd = Date.now() + 240;
+          const ticker = () => {
+            if (Date.now() >= shuffleEnd) {
+              gsap.ticker.remove(ticker);
+              state.value = 0;
+              updateText();
+              return;
+            }
+            state.value = Math.random() * target;
+            updateText();
+          };
+          gsap.ticker.add(ticker);
+        }, 0);
+
+        timeline.to(
+          state,
+          {
+            value: target,
+            duration: 0.85,
+            ease: "power3.out",
+            onUpdate: updateText,
+          },
+          0.24
+        );
+
+        ScrollTrigger.create({
+          trigger: el,
+          start: "top 92%",
+          once: true,
+          onEnter: () => timeline.play(0),
         });
       });
 
@@ -122,8 +173,10 @@ export default function Home() {
     <main ref={pageRef} className="portfolio-shell">
       <HeroSection />
       <AboutSection />
+      <ExperienceSection />
       <StackSection />
-      <ProjectsSection />
+      <ProjectsWallSection />
+      {/* <ProjectsSection /> */}
       <ContactSection />
     </main>
   );
