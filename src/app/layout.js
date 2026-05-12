@@ -1,17 +1,7 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/layout/navbar/Navbar";
 import Footer from "../components/layout/footer/Footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import FooterGate from "../components/utils/FooterGate";
+import SmoothScrollGate from "../components/utils/SmoothScrollGate";
 
 export const metadata = {
   title: "Naresh Rajkumar | Frontend Developer",
@@ -20,12 +10,26 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const introSlabs = Array.from({ length: 6 }, (_, index) => index);
+
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {/* <Navbar/> */}
-        {children}
-        <Footer/>
+      <body>
+        {/* Keep fixed layers OUTSIDE the transformed smooth-scroll content. */}
+        <div className="intro-overlay" aria-hidden="true">
+          {introSlabs.map((slab) => (
+            <div key={slab} className="intro-slab" />
+          ))}
+        </div>
+
+        {/* <Navbar /> */}
+
+        <SmoothScrollGate smooth={3} anchorOffset={96}>
+          {children}
+          <FooterGate>
+            <Footer />
+          </FooterGate>
+        </SmoothScrollGate>
       </body>
     </html>
   );

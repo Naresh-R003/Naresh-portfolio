@@ -1,11 +1,15 @@
+const contactEmail = "nareshrajkumar31@gmail.com";
+const contactPhoneDisplay = "+91 88078 23339";
+const contactPhoneHref = "tel:+918807823339";
+
 const socialLinks = [
   {
-    label: "X",
-    href: "https://x.com/",
+    label: "Phone",
+    href: contactPhoneHref,
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
-          d="M18.9 2H22l-6.8 7.78L23 22h-6.8l-5.3-6.86L4.8 22H2l7.3-8.37L1 2h7l4.8 6.24L18.9 2z"
+          d="M6.6 2.7 4.3 5c-.6.6-.8 1.5-.5 2.3 1.8 4.7 5.6 8.5 10.3 10.3.8.3 1.7.1 2.3-.5l2.3-2.3c.6-.6.6-1.6 0-2.2l-2-2c-.5-.5-1.2-.6-1.8-.3l-1.3.7c-.3.2-.7.2-1 0a12.7 12.7 0 0 1-4.2-4.2c-.2-.3-.2-.7 0-1l.7-1.3c.3-.6.2-1.3-.3-1.8l-2-2c-.6-.6-1.6-.6-2.2 0Z"
           fill="currentColor"
         />
       </svg>
@@ -17,20 +21,35 @@ const socialLinks = [
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
-          d="M6.94 6.5a2.19 2.19 0 1 1 0-4.38 2.19 2.19 0 0 1 0 4.38ZM3.8 21V8.3H10V21H3.8Zm9.9-12.7h5.96v1.74h.08c.83-1.45 2.86-2.97 5.88-2.97 6.29 0 7.45 3.5 7.45 8.05V21H24.8v-6.27c0-1.5-.03-3.43-2.48-3.43-2.48 0-2.86 1.64-2.86 3.33V21H13.7V8.3Z"
+          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
           fill="currentColor"
         />
       </svg>
     ),
   },
   {
-    label: "GitHub",
-    href: "https://github.com/Naresh-R003",
+    label: "Email",
+    href: `mailto:${contactEmail}`,
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
-          d="M12 2C6.48 2 2 6.59 2 12.26c0 4.54 2.87 8.4 6.84 9.76.5.1.68-.22.68-.48 0-.24-.01-.86-.01-1.69-2.78.62-3.37-1.39-3.37-1.39-.45-1.18-1.1-1.49-1.1-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.67.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.1 9.1 0 0 1 2.5-.35c.85 0 1.7.12 2.5.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.8-4.57 5.06.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .26.18.58.69.48A10.2 10.2 0 0 0 22 12.26C22 6.59 17.52 2 12 2Z"
+          d="M4 7.5C4 6.12 5.12 5 6.5 5h11C19.88 5 21 6.12 21 7.5v9C21 17.88 19.88 19 18.5 19h-11C5.12 19 4 17.88 4 16.5v-9Z"
           fill="currentColor"
+          opacity="0.12"
+        />
+        <path
+          d="M6.5 6h11C19.43 6 20 6.57 20 7.5v9c0 .93-.57 1.5-1.5 1.5h-11C6.57 18 6 17.43 6 16.5v-9C6 6.57 6.57 6 7.5 6Z"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        />
+        <path
+          d="m6.6 7.7 5.4 4.1c.6.45 1.4.45 2 0l5.4-4.1"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinejoin="round"
+          strokeLinecap="round"
         />
       </svg>
     ),
@@ -58,31 +77,27 @@ export default function ContactSection() {
               <span className="gradient-heading">Ready to build something smarter?</span>
 <br />              
               <span className="gradient-heading pt-1 font-medium">
-                 Let&apos;s{" "}   <span className="instrument-italic">build together</span>  
+                 Let&apos;s{" "}   <span className="instrument-italic tracking-wider">build together</span>  
               </span>
             </h2>
 
             <p className="mt-5 text-sm text-white/90 md:text-base">
-              Schedule a call or drop a message — I usually reply within 24 hours.
+               Drop a message — I usually reply within 24 hours.
             </p>
 
-        <div className="mt-8 flex justify-center">
-  <a
+        <div className="mt-2 flex justify-center">
+  {/* <a
     href="mailto:nareshrajkumar31@gmail.com"
     className="group relative inline-flex items-center justify-center overflow-visible rounded-xl border border-white/10 bg-[#070707] px-8 py-4 text-base font-medium text-white transition-all duration-500 hover:border-white/20"
   >
-    {/* Bottom Glow */}
     <div className="pointer-events-none absolute left-1/2 top-full h-[80px] w-[140%] -translate-x-1/2 -translate-y-1/2 opacity-80 blur-2xl">
       <div className="h-full w-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.55)_0%,rgba(255,255,255,0.18)_35%,transparent_75%)] transition-all duration-500 group-hover:opacity-100" />
     </div>
 
-    {/* Thin Stroke Glow */}
     <div className="pointer-events-none absolute inset-0 rounded-xl border border-white/5" />
 
-    {/* Inner Background */}
     <div className="absolute inset-[1px] rounded-xl bg-[#050505]" />
 
-    {/* Content */}
     <div className="relative z-10 flex items-center gap-3">
       <span className="tracking-wide">Book A Free Call</span>
 
@@ -93,15 +108,15 @@ export default function ContactSection() {
         ↗
       </span>
     </div>
-  </a>
+  </a> */}
 </div>
             <div className="mt-10 flex items-center justify-center gap-6 text-white/70">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
                   className="grid h-11 w-11 place-items-center border border-[#ffffff12] bg-[#111317] transition hover:border-[#ffffff24] hover:text-white"
                   aria-label={link.label}
                 >
@@ -110,7 +125,10 @@ export default function ContactSection() {
               ))}
             </div>
 
-            <p className="mt-8 text-sm text-white/90">nareshrajkumar31@gmail.com</p>
+            <div className="mt-8 space-y-2 text-sm text-white/90">
+              <p>{contactEmail}</p>
+              <p>{contactPhoneDisplay}</p>
+            </div>
           </div>
         </div>
       </div>

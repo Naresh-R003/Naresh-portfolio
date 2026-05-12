@@ -41,11 +41,11 @@ export default function StackSection() {
   return (
     <section id="stack" className="section-padding">
       <div className="section-width">
-       <div className="text-center w-full flex mb-6 flex-col mx-auto max-w-3xl">
-                    <h2 className="mt-7 text-pretty text-3xl font-medium leading-normal text-white md:text-5xl">
-The Tools I Use
+       <div className="gsap-reveal text-center w-full flex mb-6 flex-col mx-auto max-w-3xl">
+                    <h2 className="mt-7 gradient-heading text-pretty text-3xl font-medium leading-normal md:text-5xl">
+ <span className="instrument-italic tracking-wider">Tech Stack</span> Used
 </h2>
-<p className="text-lg pt-2 text-white font-normal">
+<p className="text-lg pt-2 text-white/70 font-normal">
     A focused stack for product UI, marketing motion, CMS-driven rendering, mobile flows and API-heavy
           dashboards.
 </p></div>

@@ -1,8 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Metro Gate";
+  src: url("/font/Metro%20Gate.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nordica Black";
+  src: url("/font/NordicaBlack.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   color-scheme: dark;
@@ -15,7 +32,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* GSAP handles smoothing so ScrollTrigger stays accurate. */
+  scroll-behavior: auto;
   scroll-padding-top: 96px;
   background: var(--background);
 }
@@ -26,7 +44,35 @@ body {
   overflow-x: hidden;
   background: #08090b;
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* GSAP smooth scrolling wrapper/content (native scrollbar remains on <body>) */
+.gsap-smooth-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.gsap-smooth-content {
+  width: 100%;
+  will-change: transform;
 }
 
 .instrument {
@@ -37,8 +83,22 @@ body {
 
 .instrument-italic {
   font-family: "Instrument Serif", serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
+}
+
+.cormorant {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+}
+
+.metro-gate {
+  font-family: "Metro Gate", "Cormorant Garamond", serif;
+}
+
+.nordica-black {
+  font-family: "Nordica Black", "Plus Jakarta Sans", sans-serif;
+  letter-spacing: 0.04em;
 }
 
 .gradient-heading {
@@ -147,17 +207,21 @@ button {
 
 .hero-background-glow {
   position: absolute;
-  inset: 0;
+  /* Slight overscan prevents subpixel seams when the page is transform-smoothed */
+  inset: -2px;
   background:
     linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.045) 44%, transparent 64%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 38%);
   opacity: 0.72;
   pointer-events: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .hero-noise {
   position: absolute;
-  inset: 0;
+  /* Slight overscan prevents subpixel seams when the page is transform-smoothed */
+  inset: -2px;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
@@ -165,13 +229,16 @@ button {
   mask-image: radial-gradient(circle at center, #000 0%, transparent 74%);
   opacity: 0.3;
   pointer-events: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .intro-overlay {
   position: fixed;
   inset: 0;
   z-index: 90;
-  display: flex;
+  display: none;
+  opacity: 0;
   pointer-events: none;
   background: #ffffff;
 }
@@ -335,5 +402,14 @@ button {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.001ms !important;
+  }
+
+  .force-motion,
+  .force-motion *,
+  .force-motion *::before,
+  .force-motion *::after {
+    animation-duration: revert !important;
+    animation-iteration-count: revert !important;
+    transition-duration: revert !important;
   }
 }

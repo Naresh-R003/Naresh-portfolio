@@ -24,10 +24,10 @@ export default function AboutSection() {
           <div className="gsap-reveal flex h-full flex-col">
          
 
-            <h2 className="mt-10 text-4xl font-semibold uppercase leading-[0.9] text-white sm:text-6xl lg:text-7xl">
-              ABOUT
+            <h2 className="mt-10 text-4xl gradient-heading font-medium  leading-[0.9] sm:text-4xl lg:text-6xl">
+            <span className="instrument-italic leading-[0.9] tracking-wider">About</span>  
               <br />
-              ME
+              Me
             </h2>
             <p className="mt-6 text-base leading-6 text-white/90">
               Building fast, scalable and delightful digital experiences.
@@ -71,14 +71,15 @@ export default function AboutSection() {
               {focusAreas.map((item) => (
                 <motion.div
                   key={item}
-                  className="flex items-center justify-between gap-4 border border-[#ffffff14] bg-[#0b0d10] px-5 py-4"
-                  whileHover={{ borderColor: "rgba(255,255,255,0.28)" }}
+                  className="group relative"
+                  whileHover={{ y: -4, scale: 1.015 }}
                   transition={{ type: "spring", stiffness: 260, damping: 22 }}
                 >
-                  <p className="text-sm font-medium text-white">{item}</p>
-                  <span className="text-lg font-medium text-[#a3e635]" aria-hidden="true">
-                    +
-                  </span>
+                  <div className="bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px] [clip-path:polygon(0_0,92%_0,100%_16%,100%_100%,8%_100%,0_84%)]">
+                    <div className="border border-[#ffffff14] bg-[#0b0d10] px-5 py-4 transition-colors duration-300 [clip-path:polygon(0_0,92%_0,100%_16%,100%_100%,8%_100%,0_84%)] group-hover:border-[#ffffff28]">
+                      <p className="text-sm font-medium text-white">{item}</p>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
