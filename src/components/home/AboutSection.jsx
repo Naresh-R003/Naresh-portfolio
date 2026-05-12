@@ -18,13 +18,13 @@ const focusAreas = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="section-padding border-t border-[#ffffff10]">
+    <section  className="section-padding border-t border-[#ffffff10]">
       <div className="section-width">
-        <div className="grid gap-10 lg:grid-cols-3 lg:items-stretch lg:gap-12">
+        <div  className="grid gap-10 lg:grid-cols-3 lg:items-stretch lg:gap-12">
           <div className="gsap-reveal flex h-full flex-col">
          
 
-            <h2 className="mt-10 text-4xl gradient-heading font-medium  leading-[0.9] sm:text-4xl lg:text-6xl">
+            <h2 id="about" className="mt-10 text-4xl gradient-heading font-medium  leading-[0.9] sm:text-4xl lg:text-6xl">
             <span className="instrument-italic leading-[0.9] tracking-wider">About</span>  
               <br />
               Me
@@ -41,9 +41,9 @@ export default function AboutSection() {
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 220, damping: 24 }}
           >
-            <div className="bg-gradient-to-br from-[#ffffff26] via-[#ffffff0f] to-[#ffffff1a] p-[1px] [clip-path:polygon(0_0,92%_0,100%_9%,100%_100%,8%_100%,0_92%)]">
-              <div className="bg-[#0b0d10] [clip-path:polygon(0_0,92%_0,100%_9%,100%_100%,8%_100%,0_92%)]">
-                <div className="relative aspect-[4/6] w-full lg:aspect-auto lg:h-full lg:min-h-[560px]">
+            <div className="overflow-hidden bg-gradient-to-br from-[#ffffff26] via-[#ffffff0f] to-[#ffffff1a] p-[1px] [clip-path:polygon(0_0,92%_0,100%_9%,100%_100%,8%_100%,0_92%)]">
+              <div className="overflow-hidden bg-[#0b0d10] [clip-path:polygon(0_0,92%_0,100%_9%,100%_100%,8%_100%,0_92%)]">
+                <div className="relative aspect-[4/6] w-full overflow-hidden lg:aspect-auto lg:h-full lg:min-h-[560px]">
                   <img
                     src="/about/hero.jpeg"
                     alt="Naresh Rajkumar portrait"
@@ -75,8 +75,8 @@ export default function AboutSection() {
                   whileHover={{ y: -4, scale: 1.015 }}
                   transition={{ type: "spring", stiffness: 260, damping: 22 }}
                 >
-                  <div className="bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px] [clip-path:polygon(0_0,92%_0,100%_16%,100%_100%,8%_100%,0_84%)]">
-                    <div className="border border-[#ffffff14] bg-[#0b0d10] px-5 py-4 transition-colors duration-300 [clip-path:polygon(0_0,92%_0,100%_16%,100%_100%,8%_100%,0_84%)] group-hover:border-[#ffffff28]">
+                  <div className="clip-notch clip-notch-sm bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px]">
+                    <div className="clip-notch clip-notch-sm border border-white/10 bg-[#0b0d10]/55 px-5 py-4 backdrop-blur-sm transition-colors duration-300 group-hover:border-white/20">
                       <p className="text-sm font-medium text-white">{item}</p>
                     </div>
                   </div>
@@ -87,23 +87,25 @@ export default function AboutSection() {
         </div>
 
         <div className="mt-12 border-t border-[#ffffff10] pt-10">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
             {metrics.map((metric, index) => (
               <motion.div
                 key={metric.label}
-                className="gsap-reveal border-l border-[#ffffff12] pl-6 first:border-l-0 first:pl-0"
+                className="gsap-reveal border-l-0 pl-0 sm:border-l sm:border-[#ffffff12] sm:pl-6 sm:first:border-l-0 sm:first:pl-0"
                 whileHover={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 240, damping: 22 }}
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-                  0{index + 2}
+                  0{index + 1}
                 </p>
-                <p className="mt-4 text-4xl font-semibold text-white">
+                <p className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
                   <span className="metric-count" data-value={metric.value} data-suffix={metric.suffix}>
                     0{metric.suffix}
                   </span>
                 </p>
-                <p className="mt-3 text-sm leading-6 text-white/90">{metric.label}</p>
+                <p className="mt-3 text-xs leading-5 text-white/90 sm:text-sm sm:leading-6">
+                  {metric.label}
+                </p>
               </motion.div>
             ))}
           </div>

@@ -37,7 +37,7 @@ function ExternalLinkIcon() {
 
 function Badge({ children }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-[#ffffff12] bg-transparent px-3 py-1 text-[11px] font-semibold text-white/75">
+    <span className="inline-flex items-center rounded-full border border-[#ffffff12] bg-transparent px-3 py-1.5 text-[11px] font-normal text-white/75">
       {children}
     </span>
   );
@@ -45,7 +45,7 @@ function Badge({ children }) {
 
 function SidebarCard({ title, children }) {
   return (
-    <section className="mb-6 rounded-2xl bg-[#0b0d10]/55 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur">
+    <section className="mb-6 bg-[#0b0d10]/55 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur ">
       <p className="text-sm font-semibold text-white">{title}</p>
       <div className="mt-4">{children}</div>
     </section>
@@ -59,10 +59,10 @@ function AtAGlanceItem({ icon, label, value }) {
         {icon}
       </div>
       <div className="min-w-0">
-        <p className="text-[10px] font-semibold  tracking-normal text-white/60">
+        <p className="text-[12px] font-medium  tracking-wide text-white/60">
           {label}
         </p>
-        <p className="mt-1 text-[11px] font-medium text-white/85">{value}</p>
+        <p className="mt-1 text-[11px] font-normal  text-white/85">{value}</p>
       </div>
     </div>
   );
@@ -93,19 +93,27 @@ function CaseStudySection({ project }) {
   return (
     <div className="mt-10  space-y-6">
       {project.caseStudy.metrics?.length ? (
-        <section id="impact" className="scroll-mt-28 rounded-2xl bg-[#0b0d10]/45 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur">
-          <p className="text-xs font-semibold text-white">Impact Metrics</p>
-          <div className="mt-3 grid gap-2 md:grid-cols-2">
+        <section id="impact" className="scroll-mt-28 bg-[#0b0d10]/45 p-0 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur ">
+          <div className=" pb-6">
+            <p className="text-sm font-semibold text-white">Metrics</p>
+          </div>
+          <div className="grid gap-4  sm:grid-cols-2">
             {project.caseStudy.metrics.map((metric) => (
               <div
                 key={metric.label}
-                className="rounded-2xl bg-[#0b0d10]/60 p-5"
+                className="group border border-white/10 bg-gradient-to-b from-[#0b0d10]/70 to-[#0b0d10]/40 p-5 shadow-[0_18px_60px_rgba(0,0,0,0.25)] transition hover:border-white/15 hover:shadow-[0_22px_70px_rgba(0,0,0,0.35)]"
               >
-                <p className="text-xs font-semibold  tracking-[0.18em] text-white/60">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55">
                   {metric.label}
                 </p>
-                <p className="mt-3 text-sm font-semibold text-white">{metric.value}</p>
-                <p className="mt-3 text-[11px] leading-normal text-white/70">{metric.note}</p>
+                <p className="mt-3 text-lg font-semibold tracking-tight text-white">
+                  {metric.value}
+                </p>
+                {metric.note ? (
+                  <p className="mt-2 text-xs leading-5 text-white/60 [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">
+                    {metric.note}
+                  </p>
+                ) : null}
               </div>
             ))}
           </div>
@@ -113,7 +121,7 @@ function CaseStudySection({ project }) {
       ) : null}
 
       {project.caseStudy.architecture?.length ? (
-        <section id="architecture" className="scroll-mt-28 rounded-2xl bg-[#0b0d10]/45 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur">
+        <section id="architecture" className="scroll-mt-28 bg-[#0b0d10]/45 p-0 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur ">
           <p className="text-sm font-semibold text-white">Architecture</p>
           <ul className="mt-5 space-y-3 text-base text-white/90">
             {project.caseStudy.architecture.map((item) => (
@@ -127,11 +135,11 @@ function CaseStudySection({ project }) {
       ) : null}
 
       {project.caseStudy.challenges?.length ? (
-        <section id="challenges" className="scroll-mt-28 rounded-2xl bg-[#0b0d10]/45 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur">
+        <section id="challenges" className="scroll-mt-28 bg-[#0b0d10]/45 p-0 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur ">
           <p className="text-sm font-semibold text-white">Challenges</p>
           <div className="mt-5 space-y-4">
             {project.caseStudy.challenges.map((item) => (
-              <div key={item.title} className="rounded-2xl bg-[#0b0d10]/60 p-5">
+              <div key={item.title} className="bg-[#0b0d10]/60 p-5 ">
                 <p className="text-base font-semibold text-white">{item.title}</p>
                 <p className="mt-3 text-sm font-semibold text-white/70">Problem</p>
                 <p className="mt-2 text-base leading-7 text-white/90">{item.problem}</p>
@@ -196,20 +204,22 @@ export default function ProjectsPage() {
     <main className="portfolio-shell">
       <header className="fixed left-0 right-0 top-0 z-[240] border-b border-[#ffffff12] bg-[#0b0d10]/70 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 md:px-8">
-          <p className="nordica-black text-xs font-semibold uppercase text-white/75">
+          <p className="nordica-black text-xs font-semibold uppercase tracking-[0.12em] text-white/75">
             Naresh Rajkumar
           </p>
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-transparent px-5 py-2.5 text-sm font-semibold text-white/90 transition hover:border-white/25 hover:text-white"
+            className="clip-notch clip-notch-sm group inline-flex w-fit items-center justify-center bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px] text-white"
           >
-            <span aria-hidden="true">←</span>
-            Back to Home
+            <span className="clip-notch clip-notch-sm inline-flex items-center gap-2 border border-white/10 bg-[#0b0d10]/55 px-5 py-2.5 text-sm font-semibold text-white/90 backdrop-blur-sm transition-colors duration-300 group-hover:border-white/20 group-hover:text-white">
+              <span aria-hidden="true">←</span>
+              Back to Home
+            </span>
           </Link>
         </div>
       </header>
 
-      <aside className="force-motion fixed left-5 top-24 z-[220] hidden h-[calc(100vh-120px)] w-[min(86vw,300px)] overflow-hidden rounded-2xl border border-[#ffffff12] bg-[#0b0d10]/55 backdrop-blur md:left-8 md:top-24 md:h-[calc(100vh-128px)] lg:flex lg:flex-col">
+      <aside className="force-motion fixed left-5 top-24 z-[220] hidden h-[calc(100vh-120px)] w-[min(86vw,300px)] overflow-hidden border border-[#ffffff12] bg-[#0b0d10]/55 backdrop-blur  lg:flex lg:flex-col">
         <div className="border-b border-[#ffffff12] px-5 py-4">
           <p className="text-sm font-semibold text-white">Project list</p>
         </div>
@@ -250,7 +260,6 @@ export default function ProjectsPage() {
                       </p>
                     </div>
 
-                    <p className="mt-2 text-xs text-white/55">{project.type}</p>
                   </div>
                   <p className="shrink-0 text-xs font-semibold text-white/45">
                     {String(index + 1).padStart(2, "0")}
@@ -284,12 +293,6 @@ export default function ProjectsPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                 Projects
               </p>
-              <Link
-                href="/#projects"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-[#0b0d10]/80 px-4 py-2 text-sm font-semibold text-white/90 backdrop-blur transition hover:border-white/25 hover:text-white"
-              >
-                Back to home
-              </Link>
             </div>
 
             <div className="">
@@ -441,7 +444,7 @@ export default function ProjectsPage() {
           {/* Desktop: side menu + single active details panel */}
           <div className="hidden lg:block lg:pl-[320px]">
             <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_340px] xl:items-start">
-              <section className="overflow-hidden rounded-3xl bg-[#0b0d10]/45 shadow-[0_30px_120px_rgba(0,0,0,0.45)] backdrop-blur">
+              <section className="overflow-hidden bg-[#0b0d10]/45 shadow-[0_30px_120px_rgba(0,0,0,0.45)] backdrop-blur ">
                 <motion.div
                   key={activeSlug}
                   initial={{ opacity: 0, y: 14 }}
@@ -451,6 +454,7 @@ export default function ProjectsPage() {
                 >
                   {active.image ? (
                     <Image
+                      key={active.image}
                       src={active.image}
                       alt={`${active.title} preview`}
                       fill
@@ -460,66 +464,20 @@ export default function ProjectsPage() {
                     />
                   ) : null}
 
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0b0d10] via-[#0b0d10dd] to-[#0b0d1020]" />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b0d10cc] via-transparent to-transparent" />
+                  {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0b0d10] via-[#0b0d10dd] to-[#0b0d1020]" /> */}
 
                   <div className="relative z-10 h-[200px] p-7 md:min-h-[400px] lg:p-8">
                     <div className="max-w-[420px]">
-                      <motion.p
-                        variants={heroStagger}
-                        initial="hidden"
-                        animate="show"
-                        custom={0}
-                        className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/55"
-                      >
-                        {active.period}
-                      </motion.p>
-
-                      <motion.h1
+                      {/* <motion.h1
                         variants={heroStagger}
                         initial="hidden"
                         animate="show"
                         custom={1}
-                        className="mt-4 text-5xl font-semibold leading-none tracking-[-0.04em] text-white lg:text-6xl"
+                        className="text-3xl instrument-italic gradient-heading  pb-1 font-semibold tracking-wide  text-white lg:text-6xl"
                       >
                         {active.title}
-                      </motion.h1>
+                      </motion.h1> */}
 
-                      <motion.p
-                        variants={heroStagger}
-                        initial="hidden"
-                        animate="show"
-                        custom={2}
-                        className="mt-3 text-base text-white/65"
-                      >
-                        {active.type}
-                      </motion.p>
-
-                      {active.summary ? (
-                        <motion.p
-                          variants={heroStagger}
-                          initial="hidden"
-                          animate="show"
-                          custom={3}
-                          className="mt-5 text-sm leading-6 text-white/75"
-                        >
-                          {active.summary}
-                        </motion.p>
-                      ) : null}
-
-                      {(active.stack || []).length ? (
-                        <motion.div
-                          variants={heroStagger}
-                          initial="hidden"
-                          animate="show"
-                          custom={4}
-                          className="mt-6 flex flex-wrap gap-2.5"
-                        >
-                          {(active.stack || []).slice(0, 8).map((tech) => (
-                            <Badge key={tech}>{tech}</Badge>
-                          ))}
-                        </motion.div>
-                      ) : null}
                     </div>
                   </div>
                 </motion.div>
@@ -532,7 +490,7 @@ export default function ProjectsPage() {
                   {active.caseStudy?.overview || active.summary ? (
                     <section
                       id="overview"
-                      className="scroll-mt-28 rounded-2xl border border-[#ffffff12] bg-[#0b0d10]/60 p-6 backdrop-blur"
+                      className="scroll-mt-28 bg-[#0b0d10]/45 p-0 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur "
                     >
                       <p className="text-sm font-semibold text-white">Project Overview</p>
                       <p className="mt-4 text-base leading-7 text-white/90">
@@ -542,7 +500,7 @@ export default function ProjectsPage() {
                   ) : null}
 
                   {active.highlights?.length ? (
-                    <section className="mt-6 rounded-2xl border border-[#ffffff12] bg-[#0b0d10]/60 p-6 backdrop-blur">
+                    <section className="mt-6 bg-[#0b0d10]/45 p-0 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur ">
                       <p className="text-sm font-semibold text-white">Highlights</p>
                       <ul className="mt-5 grid gap-4 lg:grid-cols-2">
                         {active.highlights.map((item) => (
@@ -556,7 +514,7 @@ export default function ProjectsPage() {
                   ) : null}
 
                   {active.impact ? (
-                    <section className="mt-6 rounded-2xl border border-[#ffffff12] bg-[#0b0d10]/60 p-6 backdrop-blur">
+                    <section className="mt-6 bg-[#0b0d10]/45 p-0 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur">
                       <p className="text-sm font-semibold text-white">Impact</p>
                       <p className="mt-4 text-base leading-7 text-white/90">{active.impact}</p>
                     </section>
@@ -566,7 +524,7 @@ export default function ProjectsPage() {
                 </div>
               </section>
 
-              <aside className="no-scrollbar xl:sticky xl:top-24 xl:h-[calc(100vh-128px)] xl:overflow-auto">
+              <aside className="xl:sticky xl:top-24">
                 <SidebarCard title="Project at a glance">
                   <div className="space-y-2">
                     <AtAGlanceItem
@@ -640,6 +598,16 @@ export default function ProjectsPage() {
                     </div>
                   ) : null}
                 </SidebarCard>
+
+                {(active.stack || []).length ? (
+                  <SidebarCard title="Tech stack">
+                    <div className="flex flex-wrap gap-2.5">
+                      {(active.stack || []).slice(0, 12).map((tech) => (
+                        <Badge key={tech}>{tech}</Badge>
+                      ))}
+                    </div>
+                  </SidebarCard>
+                ) : null}
 
                 {/* Impact metrics removed from sidebar */}
               </aside>

@@ -9,17 +9,24 @@ export default function HeroSection() {
       <div className="hero-noise" aria-hidden="true" />
 
        <div className="hero-content section-width relative z-[110] flex min-h-[100svh] flex-col justify-between gap-10 pb-8 pt-10 md:pb-12">
-        <div className="hero-load-fade  text-white flex items-center justify-between gap-4 text-4xl font-normal
+        <div className="hero-load-fade  text-white flex items-center justify-between gap-4 text-2xl md:text-4xl font-normal
     ">
-          <span className="nordica-black tracking-wide!  font-normal!">Naresh Rajkumar</span>
-          <a className="font-medium text-lg py-2 w-fit text-nowrap px-4 border rounded-full" href="#projects">
-            Work <span aria-hidden="true">+</span>
+          <span className="nordica-black font-normal tracking-[0.06em] sm:tracking-[0.08em]">
+            Naresh Rajkumar
+          </span>
+          <a
+            href="#projects"
+            className="clip-notch clip-notch-sm w-fit bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px] transition"
+          >
+            <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-5 py-2 text-nowrap text-lg font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20">
+              Work <span aria-hidden="true">+</span>
+            </span>
           </a>
         </div>
 
         <div className="flex flex-1 items-center">
           <h1
-            className="nordica-black pointer-events-none overflow-hidden font-semibold uppercase text-[#ffffff] text-[56px] leading-[100%] sm:text-[72px] md:text-[96px] xl:text-[120px] 2xl:text-[150px] xl:leading-[120px] 2xl:leading-[140px]"
+            className="nordica-black pointer-events-none overflow-hidden font-semibold uppercase text-[#ffffff] text-[44px] leading-[100%] sm:text-[60px] md:text-[96px] xl:text-[120px] 2xl:text-[150px] xl:leading-[120px] 2xl:leading-[140px]"
             aria-label="Frontend Developer"
           >
             <span className="hero-headline-line-1 inline-block whitespace-nowrap" aria-hidden="true">
@@ -66,7 +73,27 @@ export default function HeroSection() {
               ))}
             </span>
             <span className="scroll-wheel-star" aria-hidden="true">
-              *
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 5v12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M7 14l5 5 5-5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </span>
           </a>
 

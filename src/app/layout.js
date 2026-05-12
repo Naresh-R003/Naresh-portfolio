@@ -2,6 +2,7 @@ import "./globals.css";
 import Footer from "../components/layout/footer/Footer";
 import FooterGate from "../components/utils/FooterGate";
 import SmoothScrollGate from "../components/utils/SmoothScrollGate";
+import CursorFollower from "../components/utils/CursorFollower";
 
 export const metadata = {
   title: "Naresh Rajkumar | Frontend Developer",
@@ -21,6 +22,8 @@ export default function RootLayout({ children }) {
             <div key={slab} className="intro-slab" />
           ))}
         </div>
+
+        <CursorFollower />
 
         {/* <Navbar /> */}
 

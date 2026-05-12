@@ -50,20 +50,20 @@ export default function ExperienceSection() {
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-4">
-                        <span className="h-px w-6 bg-[#ffffff18]" />
-                        <h3 className="text-3xl font-semibold text-white">
+                      <div className="flex items-center gap-4 lg:justify-start justify-center">
+                        <span className="h-px w-6 bg-[#ffffff18] hidden lg:block" />
+                        <h3 className="text-3xl font-semibold text-white text-center lg:text-left">
                           Turbostart
                         </h3>
                       </div>
 
-                      <p className="mt-3 text-sm text-white/90">
+                      <p className="mt-3 text-sm text-white/90 text-center lg:text-left">
                         Full Stack Developer{" "}
                         <span className="mx-2 text-white/40">•</span>
                         May 2025 – Present
                       </p>
 
-                      <p className="mt-6 text-base leading-normal text-white/90 md:text-lg">
+                      <p className="mt-6 text-base leading-normal text-white/90 md:text-lg text-center lg:text-left">
                         Building SaaS modules, CMS platforms, animated web
                         experiences and React Native interfaces across client
                         products.
@@ -79,20 +79,22 @@ export default function ExperienceSection() {
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-4">
-                        <span className="h-px w-6 bg-[#ffffff18]" />
-                        <h3 className="text-3xl font-semibold text-white">
+                      <div className="flex items-center gap-4 lg:justify-start justify-center">
+                        <span className="h-px w-6 bg-[#ffffff18] hidden lg:block" />
+                        <h3 className="text-3xl font-semibold text-white text-center lg:text-left">
                           Teceze
                         </h3>
                       </div>
 
-                      <p className="mt-3 text-sm text-white/90">
+                      <p className="mt-3 text-sm text-white/90 text-center lg:text-left">
                         Frontend Developer{" "}
                         <span className="mx-2 text-white/40">•</span>
-                        May 2023 – Oct 2023
+                        May 2024 – Oct 2024
+                         <span className="mx-2 text-white/40">•</span>
+                       Full time
                       </p>
 
-                      <p className="mt-6 text-base leading-normal text-white/90 md:text-lg">
+                      <p className="mt-6 text-base leading-normal text-white/90 md:text-lg text-center lg:text-left">
                         Developed responsive React interfaces, reusable
                         components and API-integrated SaaS application views.
                       </p>

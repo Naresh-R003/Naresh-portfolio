@@ -4,8 +4,9 @@ export const projects = [
     slug: "techflu",
     title: "Techflu",
     type: "Laptop rental marketplace",
+    industry: "Commerce Marketplace & Logistics Tech",
     period: "Apr 2026 - May 2026",
-    image: "/projects/image.png",
+    image: "/projects/techflu.png",
     role: "Full-Stack Developer",
     href: "https://dev.d133rniyo79rht.amplifyapp.com/",
     summary:
@@ -90,8 +91,9 @@ export const projects = [
     slug: "lighthouse",
     title: "Lighthouse",
     type: "Luxury brand web platform",
+    industry: "PropTech & Real Estate Intelligence",
     period: "Feb 2026 - Mar 2026",
-    image: "/projects/image.png",
+    image: "/projects/lighthouse.png",
     role: "Sole Full-Stack Developer",
     href: "",
     summary:
@@ -188,139 +190,12 @@ export const projects = [
     links: [],
   },
   {
-    slug: "auditee-ai",
-    title: "Auditee AI",
-    type: "Enterprise SaaS platform",
-    period: "Oct 2025 - Jan 2026",
-    image: "/projects/image.png",
-    role: "Frontend Engineer",
-    href: "https://auditee.ai/",
-    summary:
-      "Built the complete enterprise product frontend with scalable component architecture, authentication, onboarding modules, and data-heavy workflows.",
-    highlights: [
-      "Implemented auth flows, client selection, file upload workflows, and upload tracking interfaces.",
-      "Built responsive KPI dashboards with dynamic chart components and data visualization patterns.",
-      "Developed onboarding modules: Org Hierarchy, Brand, SSO, Campaign, and User Management flows.",
-    ],
-    stack: ["React", "Chart.js", "Tailwind CSS", "REST APIs"],
-    impact:
-      "Raised UI consistency and maintainability by standardizing shared components across complex product surfaces.",
-    links: [],
-  },
-  {
-    slug: "climaty-ai",
-    title: "Climaty AI",
-    type: "Carbon intelligence platform",
-    period: "Jul 2025 - Sep 2025",
-    image: "/projects/image.png",
-    role: "Frontend Developer (Animation & UI)",
-    href: "https://climaty.ai/",
-    summary:
-      "Built interactive, animation-driven UI experiences across the platform with performance-first implementation and responsive delivery.",
-    highlights: [
-      "Delivered production-ready UI sections in React/Next.js with GSAP-driven interactions and transitions.",
-      "Created immersive visuals including globe experiences and real-time mapping interfaces.",
-      "Collaborated closely with design to translate complex motion concepts into maintainable components.",
-    ],
-    stack: ["React", "Next.js", "GSAP", "Framer Motion", "Tailwind CSS"],
-    impact:
-      "Delivered smooth, responsive motion while keeping runtime performance stable on real devices.",
-    links: [],
-  },
-  {
-    slug: "realm",
-    title: "Realm",
-    type: "Interactive marketing website",
-    period: "Jun 2025",
-    image: "/projects/image.png",
-    role: "Frontend Developer",
-    href: "https://therealm.in/",
-    summary:
-      "Built a complete marketing website with high-performance motion, interactive sections, and a fully responsive experience across pages.",
-    highlights: [
-      "Implemented smooth, high-performance animations and interactive sections using GSAP and Framer Motion.",
-      "Delivered a cohesive, mobile-first experience with consistent layout and interaction patterns.",
-      "Optimized assets and motion timing for a polished marketing presentation.",
-    ],
-    stack: ["React", "GSAP", "Framer Motion", "Tailwind CSS"],
-    impact:
-      "Improved perceived quality and engagement with premium motion without sacrificing load performance.",
-    links: [],
-  },
-
-  // Additional projects (full list)
-  {
-    slug: "t20-mumbai-suite",
-    title: "T20 Mumbai",
-    type: "Tournament platform (website + mobile app)",
-    period: "Apr 2025 - May 2025",
-    image: "/projects/image.png",
-    role: "Frontend & Mobile Developer",
-    href: "https://www.t20mumbai.com/",
-    links: [
-      {
-        label: "Play Store",
-        href: "https://play.google.com/store/apps/details?id=com.mca.t20mumbai",
-      },
-    ],
-    summary:
-      "Delivered a unified tournament experience across web and mobile, covering fixtures, standings, stats, news, and match-center views with reliable data rendering and mobile-first UX.",
-    highlights: [
-      "Built scalable, data-driven modules using structured datasets and dynamic routes to support multiple seasons and content types.",
-      "Delivered match-center experiences across devices with consistent navigation patterns and resilient UI states.",
-      "Prioritized readability and performance for data-dense screens to keep the experience fast on mobile.",
-    ],
-    stack: ["React", "Next.js", "React Native", "Tailwind CSS", "REST APIs", "JSON datasets"],
-    impact:
-      "Improved fan usability by standardizing UI patterns and ensuring data-heavy screens stayed clear, responsive, and reliable across devices.",
-    links: [],
-  },
-  {
-    slug: "ken42",
-    title: "Ken42",
-    type: "Landing pages & UI upgrades",
-    period: "Sep 2025 - Nov 2025",
-    image: "/projects/image.png",
-    role: "Frontend Developer",
-    href: "https://ken42.com/",
-    summary:
-      "Delivered new landing experiences and iterative UI upgrades, focusing on consistent design implementation and scalable section composition.",
-    highlights: [
-      "Built reusable landing sections to support rapid iteration and marketing updates.",
-      "Improved UI consistency across navigation and content surfaces with refinement cycles.",
-      "Ensured responsive behavior and visual polish across devices.",
-    ],
-    stack: ["React", "Next.js", "Tailwind CSS"],
-    impact:
-      "Increased delivery speed by standardizing component patterns used across multiple landing builds.",
-    links: [],
-  },
-  {
-    slug: "t2c",
-    title: "T2C",
-    type: "Website redesign & UI refinements",
-    period: "Sep 2025",
-    image: "/projects/image.png",
-    role: "Frontend Developer",
-    href: "https://tsquaredc.com/",
-    summary:
-      "Implemented a new design direction with improved layout structure and responsive behavior, delivering a cleaner, more modern UI.",
-    highlights: [
-      "Translated design specifications into reusable components and consistent layout patterns.",
-      "Improved responsiveness and reduced edge cases across breakpoints.",
-      "Refined visual details and interaction states for a more polished feel.",
-    ],
-    stack: ["React", "Next.js", "Tailwind CSS"],
-    impact:
-      "Reduced UI regressions by improving consistency and making responsive behavior predictable.",
-    links: [],
-  },
-  {
     slug: "print-buddy",
     title: "Print Buddy",
     type: "Website redesign + mobile app workflows",
+    industry: "PrintTech & Industrial Automation",
     period: "Oct 2025 - Jan 2026",
-    image: "/projects/image.png",
+    image: "/projects/print-buddy.png",
     role: "Frontend & Mobile Developer",
     href: "https://printbuddy.co.in/",
     summary:
@@ -392,6 +267,144 @@ export const projects = [
     },
     links: [],
   },
+  {
+    slug: "auditee-ai",
+    title: "Auditee AI",
+    type: "Enterprise SaaS platform",
+    industry: "AuditTech & AI Document Analytics",
+    period: "Oct 2025 - Jan 2026",
+    image: "/projects/auditee.png",
+    role: "Frontend Engineer",
+    href: "https://auditee.ai/",
+    summary:
+      "Built the complete enterprise product frontend with scalable component architecture, authentication, onboarding modules, and data-heavy workflows.",
+    highlights: [
+      "Implemented auth flows, client selection, file upload workflows, and upload tracking interfaces.",
+      "Built responsive KPI dashboards with dynamic chart components and data visualization patterns.",
+      "Developed onboarding modules: Org Hierarchy, Brand, SSO, Campaign, and User Management flows.",
+    ],
+    stack: ["React", "Chart.js", "Tailwind CSS", "REST APIs"],
+    impact:
+      "Raised UI consistency and maintainability by standardizing shared components across complex product surfaces.",
+    links: [],
+  },
+  {
+    slug: "climaty-ai",
+    title: "Climaty AI",
+    type: "Carbon intelligence platform",
+    industry: "ClimateTech (Marketing Carbon Analytics)",
+    period: "Jul 2025 - Sep 2025",
+    image: "/projects/climaty.png",
+    role: "Frontend Developer (Animation & UI)",
+    href: "https://climaty.ai/",
+    summary:
+      "Built interactive, animation-driven UI experiences across the platform with performance-first implementation and responsive delivery.",
+    highlights: [
+      "Delivered production-ready UI sections in React/Next.js with GSAP-driven interactions and transitions.",
+      "Created immersive visuals including globe experiences and real-time mapping interfaces.",
+      "Collaborated closely with design to translate complex motion concepts into maintainable components.",
+    ],
+    stack: ["React", "Next.js", "GSAP", "Framer Motion", "Tailwind CSS"],
+    impact:
+      "Delivered smooth, responsive motion while keeping runtime performance stable on real devices.",
+    links: [],
+  },
+  {
+    slug: "realm",
+    title: "Realm",
+    type: "Interactive marketing website",
+    industry: "PropTech & Real Estate Experiences",
+    period: "Jun 2025",
+    image: "/projects/realm.png",
+    role: "Frontend Developer",
+    href: "https://therealm.in/",
+    summary:
+      "Built a complete marketing website with high-performance motion, interactive sections, and a fully responsive experience across pages.",
+    highlights: [
+      "Implemented smooth, high-performance animations and interactive sections using GSAP and Framer Motion.",
+      "Delivered a cohesive, mobile-first experience with consistent layout and interaction patterns.",
+      "Optimized assets and motion timing for a polished marketing presentation.",
+    ],
+    stack: ["React", "GSAP", "Framer Motion", "Tailwind CSS"],
+    impact:
+      "Improved perceived quality and engagement with premium motion without sacrificing load performance.",
+    links: [],
+  },
+
+  // Additional projects (full list)
+  {
+    slug: "t20-mumbai-suite",
+    title: "T20 Mumbai",
+    type: "Tournament platform (website + mobile app)",
+    industry: "SportsTech (Cricket Fan Experience)",
+    period: "Apr 2025 - May 2025",
+    image: "/projects/t20.png",
+    role: "Frontend & Mobile Developer",
+    href: "https://www.t20mumbai.com/",
+    links: [
+      {
+        label: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=com.mca.t20mumbai",
+      },
+    ],
+    summary:
+      "Built the complete frontend for both the T20 Mumbai website and the companion mobile app, covering match center, fixtures, standings, stats, squads, venues, and news. Integrated all screens with live APIs and hardened data handling for fast, reliable rendering during match-day traffic.",
+    highlights: [
+      "Owned end-to-end UI for web + mobile: navigation, layouts, state management, and reusable component system.",
+      "Integrated REST APIs across modules (fixtures, points table, player stats, team pages, match commentary/score) with loading, empty, and error states.",
+      "Built match-center views optimized for quick updates: score summary, innings breakdown, partnerships, fall-of-wickets, and key moments.",
+      "Delivered data-dense tables with sorting, filtering, and readable typography for mobile-first consumption.",
+      "Optimized performance: list virtualization patterns where needed, image handling, and caching strategies for repeat visits.",
+      "Implemented consistent UX patterns across platforms (tabs, chips, skeletons) to keep interactions familiar and fast.",
+    ],
+    stack: ["React", "Next.js", "React Native", "Tailwind CSS", "REST APIs", "JSON datasets"],
+    impact:
+      "Shipped a cohesive cross-platform experience that stayed responsive and readable under real match-day usage, while keeping the frontend maintainable for new seasons and content updates.",
+    links: [],
+  },
+  {
+    slug: "ken42",
+    title: "Ken42",
+    type: "Landing pages & UI upgrades",
+    industry: "EdTech & Higher Education Platforms",
+    period: "Sep 2025 - Nov 2025",
+    image: "/projects/ken42.png",
+    role: "Frontend Developer",
+    href: "https://ken42.com/",
+    summary:
+      "Delivered new landing experiences and iterative UI upgrades, focusing on consistent design implementation and scalable section composition.",
+    highlights: [
+      "Built reusable landing sections to support rapid iteration and marketing updates.",
+      "Improved UI consistency across navigation and content surfaces with refinement cycles.",
+      "Ensured responsive behavior and visual polish across devices.",
+    ],
+    stack: ["React", "Next.js", "Tailwind CSS"],
+    impact:
+      "Increased delivery speed by standardizing component patterns used across multiple landing builds.",
+    links: [],
+  },
+  {
+    slug: "t2c",
+    title: "T2C",
+    type: "Website redesign & UI refinements",
+    industry: "Software Engineering & Digital Transformation",
+    period: "Sep 2025",
+    image: "/projects/t2c.png",
+    role: "Frontend Developer",
+    href: "https://tsquaredc.com/",
+    summary:
+      "Implemented a new design direction with improved layout structure and responsive behavior, delivering a cleaner, more modern UI.",
+    highlights: [
+      "Translated design specifications into reusable components and consistent layout patterns.",
+      "Improved responsiveness and reduced edge cases across breakpoints.",
+      "Refined visual details and interaction states for a more polished feel.",
+    ],
+    stack: ["React", "Next.js", "Tailwind CSS"],
+    impact:
+      "Reduced UI regressions by improving consistency and making responsive behavior predictable.",
+    links: [],
+  },
+  
 ];
 
 export const getProjectBySlug = (slug) =>

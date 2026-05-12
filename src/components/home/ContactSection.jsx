@@ -58,9 +58,9 @@ const socialLinks = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="section-padding border-t border-[#ffffff10]">
+    <section  className="section-padding border-t border-[#ffffff10]">
       <div className="section-width">
-        <div className="gsap-reveal relative overflow-hidden border border-[#ffffff12] bg-[#0a0b0d] px-6 py-14 text-center md:px-10 md:py-20">
+        <div id="contact" className="gsap-reveal  relative overflow-hidden border border-[#ffffff12] bg-[#0a0b0d] px-6 py-14 text-center md:px-10 md:py-20">
           <div className="pointer-events-none absolute inset-0 opacity-70">
             <div className="absolute -left-24 -top-24 h-80 w-80 rounded-full bg-[#ffffff08] blur-3xl" />
             <div className="absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-[#ffffff06] blur-3xl" />

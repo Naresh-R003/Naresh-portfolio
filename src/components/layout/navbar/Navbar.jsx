@@ -19,7 +19,7 @@ export default function Navbar() {
           <span className="grid h-11 w-11 place-items-center border border-[#ffffff18] bg-[#111317] text-base font-semibold text-white">
             NR
           </span>
-          <span className="hidden text-sm font-medium text-white/90 sm:block">
+          <span className="hidden text-sm font-medium tracking-[0.04em] text-white/90 sm:block">
             Naresh Rajkumar
           </span>
         </a>

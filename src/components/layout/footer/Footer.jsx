@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="border-t border-[#ffffff10] bg-[#08090b]">
       <div className="section-width flex flex-col gap-6 py-8 text-sm text-white/90 md:flex-row md:items-center md:justify-between">
         <p>
-          2026 <span className="nordica-black">Naresh Rajkumar</span>. Frontend Developer based in Bengaluru.
+          2026 <span className="nordica-black tracking-[0.05em]">Naresh Rajkumar</span>. Frontend Developer based in Bengaluru.
         </p>
         <div className="flex flex-wrap gap-3">
           {footerLinks.map((link) => (
