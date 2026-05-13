@@ -7,7 +7,7 @@ import CursorFollower from "../components/utils/CursorFollower";
 export const metadata = {
   title: "Naresh Rajkumar | Frontend Developer",
   description:
-    "Frontend developer portfolio for Naresh Rajkumar, showcasing React, Next.js, GSAP, Framer Motion, SaaS dashboards, CMS platforms and mobile interfaces.",
+    "Full-stack developer portfolio for Naresh Rajkumar, showcasing React, Next.js, Node.js, PostgreSQL, GSAP, Framer Motion, SaaS dashboards, CMS platforms, and mobile interfaces.",
 };
 
 export default function RootLayout({ children }) {
