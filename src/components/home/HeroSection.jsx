@@ -1,5 +1,5 @@
 const scrollWheelText = "SCROLL DOWN  SCROLL DOWN  ";
-const heroHeadlineLine1 = "Frontend";
+const heroHeadlineLine1 = "Fulll Stack";
 const heroHeadlineLine2 = "Developer";
 
 export default function HeroSection() {

@@ -103,14 +103,14 @@ export default function ExperienceSection() {
                 </article>
 
                 <section className="border border-[#ffffff12] bg-[#0b0d10] p-7 md:p-8">
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center justify-center gap-4 md:justify-start">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                       Education
                     </p>
                     <span className="h-px w-10 bg-[#ffffff18]" />
                   </div>
 
-                  <div className="mt-7 grid gap-6 md:grid-cols-[84px_1fr] md:items-center">
+                  <div className="mt-7 grid justify-items-center gap-6 md:grid-cols-[84px_1fr] md:items-center md:justify-items-start">
                     <div className="grid h-20 w-20 place-items-center border border-[#ffffff14] bg-[#111317]">
                       <svg
                         width="34"
@@ -135,7 +135,7 @@ export default function ExperienceSection() {
                       </svg>
                     </div>
 
-                    <div>
+                    <div className="text-center md:text-left">
                       <h3 className="text-2xl font-semibold text-white">
                         B.Tech Information Technology
                       </h3>

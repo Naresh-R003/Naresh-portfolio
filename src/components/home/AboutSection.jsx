@@ -59,7 +59,7 @@ export default function AboutSection() {
           <div className="gsap-reveal flex h-full flex-col">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Who I am</p>
             <h3 className="mt-6 text-pretty text-base font-normal leading-tight text-white md:text-xl">
-              I&apos;m a frontend developer with 1.5+ years of experience crafting production-ready UIs across
+              I&apos;m a Full stack developer with 1.5+ years of experience crafting production-ready UIs across
               SaaS platforms, AI products, CMS websites, mobile apps and marketing builds.
             </h3>
             <p className="mt-8 text-base leading-normal text-white/90">
