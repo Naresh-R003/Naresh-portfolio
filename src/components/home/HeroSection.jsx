@@ -19,7 +19,7 @@ export default function HeroSection() {
               href="#projects"
               className="clip-notch clip-notch-sm w-fit bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px] transition"
             >
-              <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-5 py-2 text-nowrap text-lg font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20">
+              <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-4 py-2 text-nowrap text-base font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20 md:px-5 md:text-lg">
                 Work <span aria-hidden="true">+</span>
               </span>
             </a>
@@ -30,7 +30,7 @@ export default function HeroSection() {
               rel="noreferrer"
               className="clip-notch clip-notch-sm w-fit bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px] transition"
             >
-              <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-5 py-2 text-nowrap text-lg font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20">
+              <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-4 py-2 text-nowrap text-base font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20 md:px-5 md:text-lg">
                 View resume
               </span>
             </a>
