@@ -8,55 +8,61 @@ function ProjectCard({ project, index, size = "lg" }) {
   const controls = useAnimationControls();
 
   return (
-    <motion.article
-      className="group w-full min-w-0"
-      initial={{ opacity: 0, y: 26 }}
-      animate={controls}
-      viewport={{ once: true, amount: 0.35, margin: "-10% 0px -10% 0px" }}
-      onViewportEnter={() => {
-        controls.start({
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 1.25,
-            ease: [0.16, 1, 0.3, 1],
-            delay: Math.min(0.9, 0.22 + index * 0.14),
-          },
-        });
-      }}
+    <Link
+      href={`/projects?p=${encodeURIComponent(project.slug)}`}
+      className="block w-full min-w-0"
+      aria-label={`Open ${project.title}`}
     >
-      <div
-        className={`relative w-full max-w-full overflow-hidden border border-[#ffffff12] bg-[#0b0d10] shadow-[0_30px_120px_rgba(0,0,0,0.45)] ${
-          isLarge ? "aspect-[16/9]" : "aspect-[4/3]"
-        }`}
+      <motion.article
+        className="group w-full min-w-0 cursor-pointer"
+        initial={{ opacity: 0, y: 26 }}
+        animate={controls}
+        viewport={{ once: true, amount: 0.35, margin: "-10% 0px -10% 0px" }}
+        onViewportEnter={() => {
+          controls.start({
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1.25,
+              ease: [0.16, 1, 0.3, 1],
+              delay: Math.min(0.9, 0.22 + index * 0.14),
+            },
+          });
+        }}
       >
-        <img
-          src={project.image}
-          alt={`${project.title} preview`}
-          className="absolute inset-0 h-full w-full object-cover transition duration-500 ease-out [filter:grayscale(1)_saturate(0.9)_contrast(1.06)_brightness(0.78)] group-hover:scale-[1.02] group-hover:[filter:grayscale(0)_saturate(1)_contrast(1.06)_brightness(0.9)]"
-          loading="lazy"
-        />
+        <div
+          className={`relative w-full max-w-full overflow-hidden border border-[#ffffff12] bg-[#0b0d10] shadow-[0_30px_120px_rgba(0,0,0,0.45)] ${
+            isLarge ? "aspect-[16/9]" : "aspect-[4/3]"
+          }`}
+        >
+          <img
+            src={project.image}
+            alt={`${project.title} preview`}
+            className="absolute inset-0 h-full w-full object-cover transition duration-500 ease-out [filter:grayscale(1)_saturate(0.9)_contrast(1.06)_brightness(0.78)] group-hover:scale-[1.02] group-hover:[filter:grayscale(0)_saturate(1)_contrast(1.06)_brightness(0.9)]"
+            loading="lazy"
+          />
 
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_50%,rgba(255,255,255,0.06)_0%,rgba(0,0,0,0)_65%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_50%,rgba(255,255,255,0.06)_0%,rgba(0,0,0,0)_65%)]" />
 
-        <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 opacity-0 transition duration-300 ease-out group-hover:opacity-100">
-          <div className="mx-auto flex w-full items-center justify-center bg-white/95 py-1.5 text-center shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
-            <span className="text-sm font-semibold tracking-wide text-[#08090b] md:text-base">
-              {project.industry || project.type}
-            </span>
+          <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 opacity-0 transition duration-300 ease-out group-hover:opacity-100">
+            <div className="mx-auto flex w-full items-center justify-center bg-white/95 py-1.5 text-center shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+              <span className="text-sm font-semibold tracking-wide text-[#08090b] md:text-base">
+                {project.industry || project.type}
+              </span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="mt-5 flex items-center justify-between gap-4">
-        <p className="text-base font-medium text-white md:text-lg">
-          {project.title}
-        </p>
-        <p className="text-base font-medium text-white/90">
-          ({String(index + 1).padStart(2, "0")})
-        </p>
-      </div>
-    </motion.article>
+        <div className="mt-5 flex items-center justify-between gap-4">
+          <p className="text-base font-medium text-white md:text-lg">
+            {project.title}
+          </p>
+          <p className="text-base font-medium text-white/90">
+            ({String(index + 1).padStart(2, "0")})
+          </p>
+        </div>
+      </motion.article>
+    </Link>
   );
 }
 

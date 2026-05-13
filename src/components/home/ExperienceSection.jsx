@@ -8,8 +8,8 @@ export default function ExperienceSection() {
     >
       <div className="section-width">
         <div className="grid gap-10 lg:grid-cols-[0.36fr_0.64fr] lg:items-start">
-          <div className="gsap-reveal max-w-xl lg:sticky lg:top-0 lg:h-fit">
-            <div className="flex items-center gap-4">
+          <div className="gsap-reveal max-w-xl text-center lg:sticky lg:top-0 lg:h-fit lg:text-left">
+            <div className="flex items-center justify-center gap-4 lg:justify-start">
               <p className="text-4xl font-semibold gradient-heading leading-[0.9] instrument-italic tracking-wider sm:text-3xl md:text-5xl">
                 Experience
               </p>

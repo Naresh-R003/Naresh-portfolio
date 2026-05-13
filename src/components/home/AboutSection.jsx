@@ -21,10 +21,10 @@ export default function AboutSection() {
     <section  className="section-padding border-t border-[#ffffff10]">
       <div className="section-width">
         <div  className="grid gap-10 lg:grid-cols-3 lg:items-stretch lg:gap-12">
-          <div className="gsap-reveal flex h-full flex-col">
+          <div className="gsap-reveal flex h-full flex-col text-center lg:text-left">
          
 
-            <h2 id="about" className="mt-10 text-4xl gradient-heading font-medium  leading-[0.9] sm:text-4xl lg:text-6xl">
+            <h2 id="about" className="mt-10 text-4xl gradient-heading font-medium leading-[0.9] sm:text-4xl lg:text-6xl">
             <span className="instrument-italic leading-[0.9] tracking-wider">About</span>  
               <br />
               Me

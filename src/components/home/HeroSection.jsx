@@ -14,14 +14,27 @@ export default function HeroSection() {
           <span className="nordica-black font-normal tracking-[0.06em] sm:tracking-[0.08em]">
             Naresh Rajkumar
           </span>
-          <a
-            href="#projects"
-            className="clip-notch clip-notch-sm w-fit bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px] transition"
-          >
-            <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-5 py-2 text-nowrap text-lg font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20">
-              Work <span aria-hidden="true">+</span>
-            </span>
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="#projects"
+              className="clip-notch clip-notch-sm w-fit bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px] transition"
+            >
+              <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-5 py-2 text-nowrap text-lg font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20">
+                Work <span aria-hidden="true">+</span>
+              </span>
+            </a>
+
+            <a
+              href="/Naresh_R_resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="clip-notch clip-notch-sm w-fit bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px] transition"
+            >
+              <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-5 py-2 text-nowrap text-lg font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20">
+                View resume
+              </span>
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-1 items-center">
