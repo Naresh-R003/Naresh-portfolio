@@ -1,5 +1,5 @@
 const scrollWheelText = "SCROLL DOWN  SCROLL DOWN  ";
-const heroHeadlineLine1 = "Fulll Stack";
+const heroHeadlineLine1 = "Full Stack";
 const heroHeadlineLine2 = "Developer";
 
 export default function HeroSection() {
@@ -9,7 +9,7 @@ export default function HeroSection() {
       <div className="hero-noise" aria-hidden="true" />
 
        <div className="hero-content section-width relative z-[110] flex min-h-[100svh] flex-col justify-between gap-10 pb-8 pt-10 md:pb-12">
-        <div className="hero-load-fade  text-white flex items-center justify-between gap-4 text-2xl md:text-4xl font-normal
+        <div className="hero-load-fade  text-white flex items-center justify-between gap-4 text-xl md:text-4xl font-normal
     ">
           <span className="nordica-black font-normal tracking-[0.06em] sm:tracking-[0.08em]">
             Naresh Rajkumar
@@ -19,7 +19,7 @@ export default function HeroSection() {
               href="#projects"
               className="clip-notch clip-notch-sm w-fit bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px] transition"
             >
-              <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-4 py-2 text-nowrap text-base font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20 md:px-5 md:text-lg">
+              <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-3 py-1.5 md:py-2 text-nowrap text-sm font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20 md:px-5 md:text-lg">
                 Work <span aria-hidden="true">+</span>
               </span>
             </a>
@@ -30,7 +30,7 @@ export default function HeroSection() {
               rel="noreferrer"
               className="clip-notch clip-notch-sm w-fit bg-gradient-to-br from-[#ffffff26] via-[#ffffff12] to-[#ffffff1a] p-[1px] transition"
             >
-              <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-4 py-2 text-nowrap text-base font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20 md:px-5 md:text-lg">
+              <span className="clip-notch clip-notch-sm block border border-white/10 bg-[#0b0d10]/55 px-3 py-1.5 md:py-2 text-nowrap text-sm font-medium backdrop-blur-sm transition-colors duration-300 hover:border-white/20 md:px-5 md:text-lg">
                 View resume
               </span>
             </a>
